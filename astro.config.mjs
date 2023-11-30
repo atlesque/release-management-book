@@ -6,6 +6,11 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Release Management',
+			logo: {
+				src: '/src/assets/release-management-planets-transparent.png',
+				replacesTitle: true,
+			},
+			favicon: '/src/assets/release-management-planets-transparent.png',
 			social: {
 				github: 'https://github.com/atlesque/release-management-book',
 			},
@@ -21,6 +26,12 @@ export default defineConfig({
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
+			],
+			customCss: [
+				'./src/styles/custom.css',
+				// Custom fonts
+				'@fontsource-variable/inter',
+				'@fontsource/spectral',
 			],
 		}),
 	],
