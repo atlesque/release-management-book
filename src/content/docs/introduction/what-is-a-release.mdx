@@ -1,0 +1,88 @@
+---
+title: 'What is a release?'
+sidebar:
+  order: 3
+---
+
+Definitions, while boring, can bring us alignment. Because LLMs (Large-Language Models) are excellent at writing verbose definitions, I'll let ChatGPT give us a head start:
+
+> In software development, a "release" refers to the distribution of the final version of a software product to end users. This version has undergone thorough testing, debugging, and revision based on feedback from various stages such as alpha and beta testing. The release signifies that the software is deemed complete and stable enough for general usage.
+>
+> Releases can be major, minor, or patch updates, each signifying different levels of change and improvement from the previous version. Major releases often introduce significant new features or substantial changes, minor releases might include smaller new features and improvements, and patch releases generally focus on fixing bugs and resolving security issues.
+
+Let's break it down so we'll understand everything.
+
+A release is:
+> [..] the distribution of the final version of a software product [..]
+
+In practice, a *final* software version doesn't exist. Software is never done. It is either maintained or abandoned.
+
+Fun fact: even the Voyager 2, launched on August 20, 1977, is [still receiving software updates](https://www.jpl.nasa.gov/news/nasas-voyager-team-focuses-on-software-patch-thrusters) as of 2023. That's 54 years of updates, aka LTS (Long Term Support) done right!
+
+Our definition would benefit from calling it a "final version of a version" instead.
+
+When is a version ready for release? That depends. We'll see more about that in later chapters. But in essence, that is something each company decides for itself.
+
+What helps to determine if a release is ready, is testing:
+
+> [..] This version has undergone thorough testing, debugging, and revision based on feedback from various stages such as alpha and beta testing. The release signifies that the software is deemed complete and stable enough for general usage. [..]
+
+We always test a release before putting it live to our end-users.
+
+There are many types of software testing we can do, such as:
+
+* **Unit testing**: "Do the parts well work separately?"
+* **Integration testing**: "Do the parts work well together?"
+* **Functional testing**: "Does it do what we want?"
+* **Regression testing**: "Did anything break?"
+* **Stress testing**: "How much can it handle before it breaks?"
+* **Security testing**: "Is it safe from attackers?"
+* **Compatibility testing**: "Does it work well on different devices or with different software?"
+* **User acceptance testing**: "Do the real users like and accept how it works?"
+
+Depending on the size of the team, the budget and current priorities, this list can be smaller or larger.
+
+Can we test everything and make a flawless release?
+
+Some try! Companies like NASA need to make sure a minimum of safety requirements is met so that their precious astronauts survive the journey to (and from) space. And before when software used to be released on discs, the distributed version had to be rigorously tested because companies couldn't risk having to call back thousands of copies (and destroy them, as the discs were read-only).
+
+Over time, this desire for a perfect release caused the Waterfall model to rise in popularity. Many software companies, inspired by the manufacturing and construction industries, applied the same linear approach: first analyze, then build and finally: release.
+
+As software development got increasingly more complex and dependant on other things (compatibility, the Internet, changing policies, etc.), by the time the "final" release was published, parts of the release were already outdated. Another problem was that the clients who ordered the software got less involved in the process. The stereotype of a lone programmer sitting in a dark room, cut off from the outside world, got propagated. Now the sales teams promised the clients one thing, but the developers delivered something else, usually after months or years of burning through the client's money. This led to great financial losses, much frustration from all sides and many sleepless nights for the teams having to rebuild (if there was any budget left at all!).
+
+Between 1990 and 2000 we saw the rise of agile software development methods. These were designed to address the pitfalls of the Waterfall model and create a more flexible, faster development cycle.
+
+The [Agile Software Development manifesto](https://agilemanifesto.org/) reads:
+
+> * **Individuals and interactions** over processes and tools
+> * **Working software** over comprehensive documentation
+> * **Customer collaboration** over contract negotiation
+> * **Responding to change** over following a plan
+
+This meant releases needed to be **smaller** and they needed to be published **faster** so they could gather feedback **sooner**.
+
+The final part of our definition elaborates on this:
+
+> [..] Releases can be major, minor, or patch updates, each signifying different levels of change and improvement from the previous version. [..]
+
+A release commonly has a number. It made up of three parts, e.g. `v1.2.3` These numbers increase with each release. Depending on which number increases, we know which type of release it was:
+
+If the first number changes (here `1`), we call it a **major** release:
+
+> [..] Major releases often introduce significant new features or substantial changes [..]
+
+If the second number (here `2`) changes, it is a **minor** release:
+
+> [..] Minor releases might include smaller new features and improvements [..]
+
+And if the third number changes (here `3`), it is a **patch** release:
+
+> [..] Patch releases generally focus on fixing bugs and resolving security issues [..]
+
+We commonly see **major** releases breaking compatibility with integrations and current workflows. It's rare for companies to increment this and they will only do so for good reasons.
+
+e.g. When [Angular](https://angular.io/) went from v1 to v2, it meant a complete paradigm shift. All v1 code was incompatible with the v2 code, meaning many companies had to rewrite their code from scratch. They even used two separate names and domains ([Angular](https://angular.io/)) and [AngularJS](https://angularjs.org/)) to distinguish this, as people were looking for v1 documentation but ended up on the v2 site (or visa verse).
+
+**Minor** releases are the most common ones. When one of our mobile apps has an update, this is usually a minor release. These are made weekly to monthly, depending on the company's cadence.
+
+Some companies skip **patch** releases all together, pushing their changes with the **minor** releases. For convenience and clarity, it is however recommended to use them. Some companies have special workflows in place to handle **patch** releases differently. A **patch** release is commonly abbreviated to a **patch**.
