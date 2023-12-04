@@ -69,6 +69,10 @@ export default defineConfig({
           label: 'Introduction',
           autogenerate: { directory: 'introduction' },
         },
+        {
+          label: 'Releases',
+          autogenerate: { directory: 'releases' },
+        },
       ],
       customCss: [
         './src/styles/custom.css',
