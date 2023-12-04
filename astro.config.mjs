@@ -73,6 +73,10 @@ export default defineConfig({
           label: 'Releases',
           autogenerate: { directory: 'releases' },
         },
+        {
+          label: 'Misc',
+          autogenerate: { directory: 'misc' },
+        },
       ],
       customCss: [
         './src/styles/custom.css',
