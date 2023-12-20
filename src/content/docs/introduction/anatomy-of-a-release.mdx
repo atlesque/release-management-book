@@ -1,0 +1,43 @@
+---
+title: 'Anatomy of a release'
+sidebar:
+  order: 3
+---
+
+In essence, a release is simply a list of changes that gets moved to a new environment. That list can be as small as a single change or as large as thousands. At the bare minimum, a release will include the following:
+
+* Version: a unique number identifying the release
+* Date: when the release is made
+* Changes: a list of included changes
+
+About all tools and platforms support at least these three. E.g. when you make an update to an iOS app, you define the version, the date (which is automatically defined) and a description which summarizes the changes.
+
+These attributes can be formally collected in what we call "release notes". Release notes can be in a specific format (such as for iOS) or they can be freeform, like in a Markdown or plain text document.
+
+There isn't a specific standard in the industry (yet), so each platform implements this in their own way. In Atlassian Jira, a release is defined with a version, start date, end date and list of changes. Most companies have their own standard which works best for the team's needs.
+
+Release notes can also include the following extras:
+
+* Release manager: a contact responsible for the release
+* Approvals: a list of approvals from stakeholders permitting the release
+* Test summary: a summary of quality assurance (QA) tests made by the QA team
+* Environments: where the release is deployed
+* Remarks: things to take into account during the deployment of the release
+
+Depending on the tool or platform used to manage the release notes, each included change (also called an "issue") could also include more details such as:
+
+* ID: a unique identifier for the change
+* Summary: a short description of the change
+* Type: the type of change, e.g. a bug or a feature
+* Created: when the change was first created
+* Modified: when the change was last modified
+* Assignee: who was last assigned to making the change
+* Reporter: who created the change
+* Priority: how urgent or important the change is
+* Status: whether the change is done, being tested or still in progress
+
+The list above is based on the Jira format of defining issues. It can be adapted to include more details such as grouping issues into stories and epics, estimating issues using time or story points and including (automated) testing statuses.
+
+At the bare minimum, we should be able to distinguish a release from another, know when it was deployed and which changes it included. When using complex deployment strategies like with multiple environments or tenants, it's recommended to also specify these, so it is clear where the changes were deployed.
+
+Next, we will consider how frequently we can make a release.
