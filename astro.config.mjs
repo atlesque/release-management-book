@@ -12,6 +12,14 @@ export default defineConfig({
       },
       favicon: '/favicon.ico',
       head: [
+        // Shared opt-in banner; loads Cloudflare Web Analytics only after consent.
+        {
+          tag: 'script',
+          attrs: {
+            src: 'https://tools.atlesque.dev/consent.js',
+            defer: true,
+          },
+        },
         {
           tag: 'link',
           attrs: {
